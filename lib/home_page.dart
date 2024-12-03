@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = <Widget>[
-    const Home(),
+    const HomePage(),
     const Product(),
     const Contact(),
   ];
@@ -49,10 +49,47 @@ class _HomePageState extends State<HomePage> {
               ),
               title: const Text(
                 'Assessment 2',
-                style:
-                    TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white),
               ),
               backgroundColor: Colors.blue,
+              iconTheme: const IconThemeData(color: Colors.white),
+            ),
+            drawer: Drawer(
+              
+              child: ListView(
+                // Important: Remove any padding from the ListView.
+                padding: EdgeInsets.zero,
+                
+                children: [
+                  const DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                    child: Text('Assessment 2'),
+                  ),
+                  ListTile(
+                    title: const Text('Home'),
+                    onTap: () {
+                      // Update the state of the app.
+                      // ...
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Product'),
+                    onTap: () {
+                      // Update the state of the app.
+                      // ...
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Contact'),
+                    onTap: () {
+                      // Update the state of the app.
+                      // ...
+                    },
+                  ),
+                ],
+              ),
             ),
             body: const TabBarView(children: [
               Center(
@@ -89,29 +126,29 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+// class Home extends StatelessWidget {
+//   const Home({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-          length: 3,
-          child: Scaffold(
-            appBar: AppBar(
-              bottom: const TabBar(tabs: [
-                Tab(icon: Icon(Icons.home)),
-                Tab(icon: Icon(Icons.shopping_cart)),
-                Tab(icon: Icon(Icons.phone)),
-              ]),
-              title: const Text('Assessment 2'),
-            ),
-            body: const TabBarView(children: [
-              Icon(Icons.home),
-              Icon(Icons.shopping_cart),
-              Icon(Icons.phone),
-            ]),
-          )),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: DefaultTabController(
+//           length: 3,
+//           child: Scaffold(
+//             appBar: AppBar(
+//               bottom: const TabBar(tabs: [
+//                 Tab(icon: Icon(Icons.home)),
+//                 Tab(icon: Icon(Icons.shopping_cart)),
+//                 Tab(icon: Icon(Icons.phone)),
+//               ]),
+//               title: const Text('Assessment 2'),
+//             ),
+//             body: const TabBarView(children: [
+//               Icon(Icons.home),
+//               Icon(Icons.shopping_cart),
+//               Icon(Icons.phone),
+//             ]),
+//           )),
+//     );
+//   }
+// }
